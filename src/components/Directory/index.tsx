@@ -56,7 +56,6 @@ class Directory extends Component<{}, {
 
     // function to sort table by a given column
     handleSort = (column: keyof Employee, order: Order) => {
-        console.log(this.state.employees);
         let sorted = [...this.state.employees].sort(util.compareValues(column, order));
         let newOrder = order === Order.ASC ? Order.DESC : Order.ASC
         this.setState({

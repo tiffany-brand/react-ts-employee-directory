@@ -25,6 +25,21 @@ const EmployeeTable: React.FC<Props> = ({
     handleSort
 }) => {
 
+    interface ColHeadings {
+        colName: string;
+        colLabel: string
+    }
+
+    const colHeadings: ColHeadings[] = [
+        { colName: 'First Name', colLabel: "firstName" },
+        { colName: 'Last Name', colLabel: "lastName" },
+        { colName: 'Gender', colLabel: "gender" },
+        { colName: 'Email', colLabel: "email" },
+        { colName: 'Phone Number', colLabel: "phone" },
+        { colName: 'City', colLabel: "city" },
+        { colName: 'State', colLabel: "state" },
+    ]
+
     return (
         <TableContainer component={Paper}>
             <Table stickyHeader aria-label="Employee Table">
@@ -32,27 +47,13 @@ const EmployeeTable: React.FC<Props> = ({
                 <TableHead>
                     <TableRow>
                         <TableCell>Picture</TableCell>
-                        <TableCell>First Name
-                            <TableSortLabel active={orderBy === "firstName"} direction={order} onClick={() => handleSort("firstName", order)}></TableSortLabel>
-                        </TableCell>
-                        <TableCell>Last Name
-                        <TableSortLabel active={orderBy === "lastName"} direction={order} onClick={() => handleSort("lastName", order)}></TableSortLabel>
-                        </TableCell>
-                        <TableCell>Gender
-                        <TableSortLabel active={orderBy === "gender"} direction={order} onClick={() => handleSort("gender", order)}></TableSortLabel>
-                        </TableCell>
-                        <TableCell>Email
-                        <TableSortLabel active={orderBy === "email"} direction={order} onClick={() => handleSort("email", order)}></TableSortLabel>
-                        </TableCell>
-                        <TableCell>Phone Number
-                        <TableSortLabel active={orderBy === "phone"} direction={order} onClick={() => handleSort("phone", order)}></TableSortLabel>
-                        </TableCell>
-                        <TableCell>City
-                        <TableSortLabel active={orderBy === "city"} direction={order} onClick={() => handleSort("city", order)}></TableSortLabel>
-                        </TableCell>
-                        <TableCell>State
-                        <TableSortLabel active={orderBy === "state"} direction={order} onClick={() => handleSort("state", order)}></TableSortLabel>
-                        </TableCell>
+                        {colHeadings.map((col: ColHeadings) => {
+                            return (
+                                <TableCell>{col.colName}
+                                    <TableSortLabel active={orderBy === col.colLabel} direction={order} onClick={() => handleSort(col.colLabel, order)}></TableSortLabel>
+                                </TableCell>
+                            )
+                        })}
                     </TableRow>
                 </TableHead>
                 {/* Create table rows from employees array */}
