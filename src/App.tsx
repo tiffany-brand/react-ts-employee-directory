@@ -6,7 +6,6 @@ import Directory from './components/Directory';
 function App() {
   return (
     <Container>
-      <div>Employee Directory</div>
       <Directory />
     </Container>
   );

@@ -8,46 +8,53 @@ import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
 import Employee from "../../interfaces/Employee";
+import { Order } from "../../interfaces/Order";
 
 type Props = {
     employees: Employee[];
+    orderBy: string;
+    order: Order;
+    handleSort: any;
 
 }
 
 const EmployeeTable: React.FC<Props> = ({
-    employees
+    employees,
+    orderBy,
+    order,
+    handleSort
 }) => {
 
     return (
         <TableContainer component={Paper}>
             <Table stickyHeader aria-label="Employee Table">
                 {/* Table headings with sort icons and click handlers */}
-                {/* <TableHead>
+                <TableHead>
                     <TableRow>
                         <TableCell>Picture</TableCell>
                         <TableCell>First Name
-                            <TableSortLabel active={props.orderBy === "firstName"} direction={props.order} onClick={() => props.handleSort("firstName", props.order)}></TableSortLabel>
+                            <TableSortLabel active={orderBy === "firstName"} direction={order} onClick={() => handleSort("firstName", order)}></TableSortLabel>
                         </TableCell>
                         <TableCell>Last Name
-                        <TableSortLabel active={props.orderBy === "lastName"} direction={props.order} onClick={() => props.handleSort("lastName", props.order)}></TableSortLabel>
+                        <TableSortLabel active={orderBy === "lastName"} direction={order} onClick={() => handleSort("lastName", order)}></TableSortLabel>
                         </TableCell>
                         <TableCell>Gender
-                        <TableSortLabel active={props.orderBy === "gender"} direction={props.order} onClick={() => props.handleSort("gender", props.order)}></TableSortLabel>
+                        <TableSortLabel active={orderBy === "gender"} direction={order} onClick={() => handleSort("gender", order)}></TableSortLabel>
                         </TableCell>
                         <TableCell>Email
-                        <TableSortLabel active={props.orderBy === "email"} direction={props.order} onClick={() => props.handleSort("email", props.order)}></TableSortLabel>
+                        <TableSortLabel active={orderBy === "email"} direction={order} onClick={() => handleSort("email", order)}></TableSortLabel>
                         </TableCell>
                         <TableCell>Phone Number
-                        <TableSortLabel active={props.orderBy === "phone"} direction={props.order} onClick={() => props.handleSort("phone", props.order)}></TableSortLabel>
+                        <TableSortLabel active={orderBy === "phone"} direction={order} onClick={() => handleSort("phone", order)}></TableSortLabel>
                         </TableCell>
                         <TableCell>City
-                        <TableSortLabel active={props.orderBy === "city"} direction={props.order} onClick={() => props.handleSort("city", props.order)}></TableSortLabel>
+                        <TableSortLabel active={orderBy === "city"} direction={order} onClick={() => handleSort("city", order)}></TableSortLabel>
                         </TableCell>
                         <TableCell>State
-                        <TableSortLabel active={props.orderBy === "state"} direction={props.order} onClick={() => props.handleSort("state", props.order)}></TableSortLabel>
+                        <TableSortLabel active={orderBy === "state"} direction={order} onClick={() => handleSort("state", order)}></TableSortLabel>
                         </TableCell>
                     </TableRow>
-                </TableHead> */}
+                </TableHead>
                 {/* Create table rows from employees array */}
                 <TableBody>
                     {

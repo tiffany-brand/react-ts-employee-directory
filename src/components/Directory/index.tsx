@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Grid from '@material-ui/core/Grid';
+import Header from "../Header";
 import { API } from "../../utils/API";
+import { util } from "../../utils/utils";
 import Employee from "../../interfaces/Employee";
 import EmployeeTable from "../EmployeeTable";
+import { Order } from '../../interfaces/Order';
 
 
 
@@ -11,7 +14,7 @@ class Directory extends Component<{}, {
     loadedEmployees: Employee[];
     search: string;
     orderBy: string;
-    order: string;
+    order: Order;
 }> {
 
     state = {
@@ -19,7 +22,7 @@ class Directory extends Component<{}, {
         loadedEmployees: [],
         search: "",
         orderBy: "",
-        order: "asc"
+        order: Order.ASC
     }
 
     // Get employees from API and store required fields in employees state
@@ -48,11 +51,26 @@ class Directory extends Component<{}, {
             .catch(err => console.log(err));
     };
 
+    // function to sort table by a given column
+    handleSort = (column: keyof Employee, order: Order) => {
+        console.log(this.state.employees);
+        let sorted = [...this.state.employees].sort(util.compareValues(column, order));
+        let newOrder = order === Order.ASC ? Order.DESC : Order.ASC
+        this.setState({
+            employees: sorted,
+            orderBy: column,
+            order: newOrder
+        });
+    }
+
     render() {
         return (
-            <Grid>
-                <EmployeeTable employees={this.state.employees} />
-            </Grid>
+            <div className="Directory-container">
+                <Header />
+                <Grid>
+                    <EmployeeTable employees={this.state.employees} handleSort={this.handleSort} orderBy={this.state.orderBy} order={this.state.order} />
+                </Grid>
+            </div>
         )
     }
 
