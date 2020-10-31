@@ -65,7 +65,7 @@ const EmployeeTable: React.FC<Props> = ({
                                 <TableCell align="left">{emp.firstName}</TableCell>
                                 <TableCell align="left">{emp.lastName}</TableCell>
                                 <TableCell align="left">{emp.gender}</TableCell>
-                                <TableCell align="left">{emp.email}</TableCell>
+                                <TableCell align="left"><a href={`mailto:${emp.email}`}>{emp.email}</a></TableCell>
                                 <TableCell align="left">{emp.phone}</TableCell>
                                 <TableCell align="left">{emp.city}</TableCell>
                                 <TableCell align="left">{emp.state}</TableCell>
