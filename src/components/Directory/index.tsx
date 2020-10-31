@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+// Material UI Components
 import Grid from '@material-ui/core/Grid';
+// Interfaces and Enums
+import Employee from "../../interfaces/Employee";
+import { Order } from '../../interfaces/Order';
+// Components
 import Header from "../Header";
 import Search from "../Search";
+import EmployeeTable from "../EmployeeTable";
+// Utilities
 import { API } from "../../utils/API";
 import { util } from "../../utils/utils";
-import Employee from "../../interfaces/Employee";
-import EmployeeTable from "../EmployeeTable";
-import { Order } from '../../interfaces/Order';
+// Styles
 import "./style.css";
 
 

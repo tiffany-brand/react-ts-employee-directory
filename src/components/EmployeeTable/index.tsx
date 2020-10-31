@@ -1,4 +1,5 @@
 import React from "react";
+// Material UI Components
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -7,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
+// Interfaces and Enums
 import Employee from "../../interfaces/Employee";
 import { Order } from "../../interfaces/Order";
 
