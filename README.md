@@ -38,9 +38,9 @@ Because I am learning TypeScript, I decided to convert my project to TypeScript.
 
 ## Screenshots and Demo
 
-![EmpDirDemo](https://user-images.githubusercontent.com/16748389/97740772-2317d080-1ab8-11eb-8c86-22bac12e4295.gif)
+![Employee-Dir-Demo-New](https://user-images.githubusercontent.com/16748389/97781092-785aed00-1b5f-11eb-8d6c-5038450ac804.gif)
 
-![EmployeeDirectoryScreen](https://user-images.githubusercontent.com/16748389/97740718-12fff100-1ab8-11eb-83da-c7da83ecbf20.JPG)
+![EmployeeDirScreen](https://user-images.githubusercontent.com/16748389/97781095-7db83780-1b5f-11eb-8808-2c9cd797a5d8.JPG)
 
 
 ## Technologies
