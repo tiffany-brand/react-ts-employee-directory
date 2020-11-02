@@ -34,7 +34,7 @@ Because I am learning TypeScript, I decided to convert my project to TypeScript.
 
 ## Deployed Link
 
-[React TypeScript Employee Tracker](https://tiffany-brand.github.io/react-ts-employee-directory/)
+[React TypeScript Employee Directory](https://tiffany-brand.github.io/react-ts-employee-directory/)
 
 ## Screenshots and Demo
 
